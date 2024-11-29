@@ -8,7 +8,10 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='css/styles.css') }}"
     />
-    <script type="module" src="{{ url_for('static', filename='script.js') }}"></script>
+    <script
+      type="module"
+      src="{{ url_for('static', filename='script.js') }}"
+    ></script>
   </head>
   <body>
     <nav>
@@ -24,7 +27,11 @@
         </li>
         <li><a class="navtext" href="{{ url_for('home') }}">Home</a></li>
         <li>
-          <a class="navtext" href="{{ url_for('view') }}">Saved Descriptions</a>
+          <a
+            class="navtext"
+            href="https://console.firebase.google.com/u/2/project/padawans-9bae0/overview"
+            >Firestore Database</a
+          >
         </li>
       </ul>
     </nav>
@@ -65,6 +72,7 @@
           name="nameInput"
           placeholder="Name (optional)"
         />
+        <input type="hidden" id="predictedKeywords" name="predictedKeywords" />
         <div class="form-row">
           <label class="selecttext" for="gender">Gender:</label>
           <select id="gender" name="gender">
@@ -161,19 +169,24 @@
             >
           </div>
         </fieldset>
+
         <div class="button-container">
           <button type="button" id="generateButton">
             <a class="btntext">Generate Description</a>
           </button>
-          <button>
-            <a class="viewbtntext" href="{{ url_for('view') }}"
-              >View Saved Descriptions</a
-            >
+          <button type="button" id="viewSavedButton">
+            <a class="viewbtntext">View Saved Descriptions</a>
           </button>
         </div>
       </form>
+      <div id="formLoading" class="loading" style="display: none"></div>
       <div id="notification" style="display: none">Description generated!</div>
-      <div id="generatedDescription" class="description-box"></div>
+    </div>
+    <div class="saved-form-container">
+      <h2 id="savedDescriptions">Saved Descriptions</h2>
+      <button id="translateButton" class="translate-button">Translate</button>
+      <div id="loading" class="loading" style="display: none"></div>
+      <div id="customerData"></div>
     </div>
   </body>
 </html>

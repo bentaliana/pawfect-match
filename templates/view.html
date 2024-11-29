@@ -31,9 +31,15 @@
         </li>
       </ul>
     </nav>
-    <div class="form-container">
-      <h2>Customer Data</h2>
-      <div id="customerData"></div>
-    </div>
+    
+    <script>
+      document.getElementById('translateButton').addEventListener('click', function() {
+        document.getElementById('loading').style.display = 'block';
+        // Simulate a delay for loading
+        setTimeout(function() {
+          document.getElementById('loading').style.display = 'none';
+        }, 2000); // Adjust the delay as needed
+      });
+    </script>
   </body>
 </html>
