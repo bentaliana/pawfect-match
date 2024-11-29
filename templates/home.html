@@ -184,6 +184,14 @@
     </div>
     <div class="saved-form-container">
       <h2 id="savedDescriptions">Saved Descriptions</h2>
+      <div class="filter-container">
+        <label for="filterSelect">Filter by:</label>
+        <select id="filterSelect">
+          <option value="latest">Latest to Oldest</option>
+          <option value="oldest">Oldest to Latest</option>
+          <option value="alphabetical">Alphabetical Order</option>
+        </select>
+      </div>
       <button id="translateButton" class="translate-button">Translate</button>
       <div id="loading" class="loading" style="display: none"></div>
       <div id="customerData"></div>
