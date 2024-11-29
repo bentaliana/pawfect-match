@@ -103,3 +103,4 @@ This project is designed to generate descriptions for pet adoption using machine
    ```
    docker-compose up --build
    ```
+   When Running, please allow all servers to set up before attempting to generate or translate descriptions.
