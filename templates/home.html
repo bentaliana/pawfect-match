@@ -18,7 +18,7 @@
       <ul class="nav-list">
         <li>
           <a class="navtitle">
-            The Pawfect Match
+            Marley &amp; Me
             <img
               class="paw"
               src="{{ url_for('static', filename='images/paw.png') }}"
@@ -179,14 +179,16 @@
           </button>
         </div>
       </form>
-      <div id="formLoading" class="loading" style="display: none"></div>
+      <div class="loading-container">
+        <div id="formLoading" class="loading" style="display: none"></div>
+      </div>
       <div id="notification" style="display: none">Description generated!</div>
     </div>
     <div class="saved-form-container">
       <h2 id="savedDescriptions">Saved Descriptions</h2>
       <div class="filter-container">
-        <label for="filterSelect">Filter by:</label>
         <select id="filterSelect">
+          <option value="" disabled selected>Filter by:</option>
           <option value="latest">Latest to Oldest</option>
           <option value="oldest">Oldest to Latest</option>
           <option value="alphabetical">Alphabetical Order</option>

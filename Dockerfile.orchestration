@@ -1,0 +1,19 @@
+FROM python:3.9-slim AS builder
+
+WORKDIR /app
+
+COPY orchestration_server.py /app/
+RUN pip install --no-cache-dir --target=/app/deps Flask requests
+
+FROM python:3.9-slim
+
+WORKDIR /app
+
+COPY --from=builder /app/deps /app/deps
+COPY orchestration_server.py /app/
+
+ENV PYTHONPATH=/app/deps
+
+EXPOSE 7000
+
+CMD ["python", "orchestration_server.py"]

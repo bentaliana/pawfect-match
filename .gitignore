@@ -1,3 +1,4 @@
 # .gitignore
 firebase-key.json
 flan_t5_trained_model/
+flan_t5_trained_model_old/

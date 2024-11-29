@@ -1,0 +1,46 @@
+version: "3.8"
+
+services:
+  interface_server:
+    build:
+      context: .
+      dockerfile: Dockerfile.interface
+    ports:
+      - "5000:5000"
+    depends_on:
+      - orchestration_server
+    networks:
+      - webnet
+
+  orchestration_server:
+    build:
+      context: .
+      dockerfile: Dockerfile.orchestration
+    ports:
+      - "7000:7000"
+    depends_on:
+      - ai_server
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - webnet
+
+  ai_server:
+    build:
+      context: .
+      dockerfile: Dockerfile.artint
+    ports:
+      - "6000:6000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:6000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - webnet
+
+networks:
+  webnet:
