@@ -49,7 +49,7 @@ This project is designed to generate descriptions for pet adoption using machine
 
 - `__pycache__/`: Contains compiled Python files.
 - `.gitignore`: Specifies files and directories to be ignored by Git.
-- `ai_server.py`: Contains the AI server implementation.
+- `ai_server.py`: Contains the AI server implementation. (Redacted)
 - `app.py`: Main application file to run the web server.
 - `colab files/`: Contains Jupyter notebooks for various tasks.
   - `CLIP_SWE.ipynb`: Notebook for CLIP model.
@@ -72,7 +72,7 @@ This project is designed to generate descriptions for pet adoption using machine
   - `css/`: Contains CSS files.
     - `styles.css`: Main stylesheet.
   - `images/`: Contains image files.
-  - `script.js`: Main JavaScript file.
+  - `script.js`: Main JavaScript file. (Redacted)
 - `templates/`: Contains HTML templates.
   - `home.html`: Main HTML template for the home page.
 
